@@ -1,5 +1,5 @@
 /* ==========================================================
-   MODERN CLASSIC DEEP RED THEME (READY & STATIC)
+   MODERN CLASSIC DEEP RED THEME (STATIC & FAST)
    ========================================================== */
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
@@ -66,7 +66,7 @@ hr{
     transparent);
 }
 
-/* Layout - Original Dimensions */
+/* Layout - Original */
 
 .main-layout{
     display:flex;
