@@ -1,445 +1,83 @@
-/* ==========================================================
-   MODERN CLASSIC GLOW THEME
-   ========================================================== */
-
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
+/* إعادة تعيين التنسيقات الأساسية */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-body{
-    font-family:'Poppins',sans-serif;
-    color:#ffffff;
-    background:#050505;
-    overflow-x:hidden;
-    text-align:center;
-    padding:20px;
-    position:relative;
+/* جعل الخلفية في منتصف الشاشة */
+body {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  direction: rtl;
 }
 
-/* Animated Background */
-
-body::before{
-    content:"";
-    position:fixed;
-    inset:0;
-    background:
-    radial-gradient(circle at 20% 20%,rgba(0,180,255,.18),transparent 30%),
-    radial-gradient(circle at 80% 70%,rgba(0,100,255,.18),transparent 35%),
-    radial-gradient(circle at 50% 50%,rgba(0,255,255,.08),transparent 45%);
-    animation:bgMove 12s ease-in-out infinite alternate;
-    z-index:-2;
+/* تنسيق التصميم الرئيسي للكارت */
+.card {
+  background-color: #ffffff;
+  width: 320px;
+  padding: 30px 20px;
+  border-radius: 20px;
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-body::after{
-    content:"";
-    position:fixed;
-    inset:0;
-    background:
-    linear-gradient(rgba(255,255,255,.015) 1px,transparent 1px),
-    linear-gradient(90deg,rgba(255,255,255,.015) 1px,transparent 1px);
-    background-size:40px 40px;
-    z-index:-1;
+/* تأثير التمرير (Hover) على الكارت */
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.25);
 }
 
-@keyframes bgMove{
-    from{
-        transform:scale(1) rotate(0deg);
-    }
-    to{
-        transform:scale(1.15) rotate(3deg);
-    }
+/* صورة الملف الشخصي */
+.avatar {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  background: linear-gradient(45deg, #ff7e5f, #feb47b);
+  margin: 0 auto 15px auto;
+  border: 4px solid #f0f0f0;
 }
 
-/* Titles */
-
-h1{
-    font-size:40px;
-    margin-bottom:8px;
-    color:#fff;
-    text-shadow:
-    0 0 5px #00bfff,
-    0 0 15px #008cff,
-    0 0 30px #0066ff;
-
-    animation:glow 2.5s infinite alternate;
+/* النصوص */
+.name {
+  color: #333333;
+  font-size: 1.4rem;
+  margin-bottom: 5px;
 }
 
-h3{
-    color:#c5c5c5;
-    font-size:15px;
-    margin-bottom:20px;
+.title {
+  color: #764ba2;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 15px;
 }
 
-@keyframes glow{
-
-    from{
-        text-shadow:
-        0 0 5px #00bfff,
-        0 0 15px #008cff;
-    }
-
-    to{
-        text-shadow:
-        0 0 10px #00ffff,
-        0 0 25px #00aaff,
-        0 0 40px #0055ff;
-    }
-
+.bio {
+  color: #666666;
+  font-size: 0.85rem;
+  line-height: 1.5;
+  margin-bottom: 20px;
 }
 
-hr{
-
-    border:none;
-    height:2px;
-    width:95%;
-    margin:25px auto;
-
-    background:
-    linear-gradient(
-    90deg,
-    transparent,
-    #00bfff,
-    #ffffff,
-    #00bfff,
-    transparent);
-
+/* الزر التفاعلي */
+.btn {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  border: none;
+  padding: 10px 25px;
+  border-radius: 25px;
+  font-size: 0.9rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: opacity 0.3s ease, transform 0.2s ease;
 }
 
-/* Layout */
-
-.main-layout{
-
-    display:flex;
-    justify-content:center;
-    align-items:flex-start;
-    gap:25px;
-    flex-wrap:wrap;
-
-}
-
-/* Media */
-
-.media-box{
-
-    width:320px;
-
-    background:rgba(255,255,255,.04);
-
-    border:1px solid rgba(0,180,255,.25);
-
-    border-radius:18px;
-
-    padding:15px;
-
-    box-shadow:
-    0 0 20px rgba(0,180,255,.15);
-
-    transition:.35s;
-
-}
-
-.media-box:hover{
-
-    box-shadow:
-    0 0 35px rgba(0,180,255,.55);
-
-    transform:translateY(-4px);
-
-}
-
-.media-box img{
-
-    width:100%;
-
-    border-radius:12px;
-
-    transition:.4s;
-
-}
-
-.media-box img:hover{
-
-    transform:scale(1.03);
-
-}
-
-/* Console */
-
-#console{
-
-    flex:1;
-
-    min-width:520px;
-
-    height:340px;
-
-    background:#000;
-
-    color:#00ff80;
-
-    font-family:Consolas,monospace;
-
-    text-align:left;
-
-    padding:18px;
-
-    overflow-y:auto;
-
-    border-radius:18px;
-
-    border:1px solid #00aaff;
-
-    box-shadow:
-
-    inset 0 0 15px rgba(0,255,120,.15),
-
-    0 0 25px rgba(0,170,255,.25);
-
-}
-
-#console::-webkit-scrollbar{
-
-    width:10px;
-
-}
-
-#console::-webkit-scrollbar-thumb{
-
-    background:#008cff;
-
-    border-radius:20px;
-
-}
-
-#console::-webkit-scrollbar-track{
-
-    background:#111;
-
-}
-
-/* Buttons */
-
-.btn-container{
-
-    margin:30px 0;
-
-}
-
-button{
-
-    position:relative;
-
-    overflow:hidden;
-
-    background:#0078ff;
-
-    color:white;
-
-    border:none;
-
-    border-radius:12px;
-
-    padding:14px 42px;
-
-    font-size:18px;
-
-    font-weight:600;
-
-    cursor:pointer;
-
-    transition:.35s;
-
-    box-shadow:
-
-    0 0 10px #0078ff,
-
-    0 0 20px rgba(0,120,255,.4);
-
-}
-
-button:hover{
-
-    background:#0099ff;
-
-    transform:translateY(-2px);
-
-    box-shadow:
-
-    0 0 15px #00bfff,
-
-    0 0 35px rgba(0,180,255,.8);
-
-}
-
-button:active{
-
-    transform:scale(.97);
-
-}
-
-button:disabled{
-
-    opacity:.5;
-
-    cursor:not-allowed;
-
-    box-shadow:none;
-
-}
-
-/* Shine Animation */
-
-button::before{
-
-    content:"";
-
-    position:absolute;
-
-    top:0;
-
-    left:-120%;
-
-    width:70%;
-
-    height:100%;
-
-    transform:skewX(-25deg);
-
-    background:
-
-    linear-gradient(
-
-    transparent,
-
-    rgba(255,255,255,.65),
-
-    transparent);
-
-}
-
-button:hover::before{
-
-    animation:shine .9s;
-
-}
-
-@keyframes shine{
-
-    100%{
-
-        left:160%;
-
-    }
-
-}
-
-/* Radio */
-
-#kernel-options{
-
-    margin-bottom:20px;
-
-}
-
-label{
-
-    margin:0 10px;
-
-}
-
-input[type="radio"]{
-
-    appearance:none;
-
-    width:18px;
-
-    height:18px;
-
-    border-radius:50%;
-
-    border:2px solid #666;
-
-    background:#111;
-
-    cursor:pointer;
-
-    transition:.3s;
-
-}
-
-input[type="radio"]:checked{
-
-    background:#00c3ff;
-
-    border-color:#00c3ff;
-
-    box-shadow:
-
-    0 0 10px #00c3ff,
-
-    0 0 20px #00c3ff;
-
-}
-
-/* Floating Glow */
-
-@keyframes float{
-
-    0%{
-
-        transform:translateY(0px);
-
-    }
-
-    50%{
-
-        transform:translateY(-5px);
-
-    }
-
-    100%{
-
-        transform:translateY(0px);
-
-    }
-
-}
-
-.media-box,
-button{
-
-    animation:float 4s ease-in-out infinite;
-
-}
-
-/* Responsive */
-
-@media(max-width:900px){
-
-.main-layout{
-
-flex-direction:column;
-
-align-items:center;
-
-}
-
-.media-box{
-
-width:100%;
-max-width:420px;
-
-}
-
-#console{
-
-min-width:100%;
-width:100%;
-
-}
-
+.btn:hover {
+  opacity: 0.9;
+  transform: scale(1.05);
 }
