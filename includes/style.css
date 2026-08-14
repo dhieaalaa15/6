@@ -1,5 +1,5 @@
 /* ==========================================================
-   MODERN CLASSIC GLOW THEME (FAST & STATIC)
+   MODERN CLASSIC DEEP RED THEME (READY & STATIC)
    ========================================================== */
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
@@ -33,16 +33,16 @@ body::after{
     z-index:-1;
 }
 
-/* Titles - Static Glowing Colors */
+/* Titles - Deep Red */
 
 h1{
     font-size:40px;
     margin-bottom:8px;
-    color:#fff;
+    color:#ff2a2a;
     text-shadow:
-    0 0 5px #00bfff,
-    0 0 15px #008cff,
-    0 0 30px #0066ff;
+    0 0 5px #b30000,
+    0 0 15px #800000,
+    0 0 30px #4d0000;
 }
 
 h3{
@@ -56,18 +56,17 @@ hr{
     height:2px;
     width:95%;
     margin:25px auto;
-
     background:
     linear-gradient(
     90deg,
     transparent,
-    #00bfff,
+    #b30000,
     #ffffff,
-    #00bfff,
+    #b30000,
     transparent);
 }
 
-/* Layout - Original */
+/* Layout - Original Dimensions */
 
 .main-layout{
     display:flex;
@@ -77,19 +76,19 @@ hr{
     flex-wrap:wrap;
 }
 
-/* Media */
+/* Media Box */
 
 .media-box{
     width:320px;
     background:rgba(255,255,255,.04);
-    border:1px solid rgba(0,180,255,.25);
+    border:1px solid rgba(179,0,0,.35);
     border-radius:18px;
     padding:15px;
-    box-shadow: 0 0 20px rgba(0,180,255,.15);
+    box-shadow: 0 0 20px rgba(179,0,0,.2);
 }
 
 .media-box:hover{
-    box-shadow: 0 0 35px rgba(0,180,255,.55);
+    box-shadow: 0 0 35px rgba(255,0,0,.45);
 }
 
 .media-box img{
@@ -97,23 +96,23 @@ hr{
     border-radius:12px;
 }
 
-/* Console - Original Size */
+/* Console Box - Deep Red Text */
 
 #console{
     flex:1;
     min-width:520px;
     height:340px;
     background:#000;
-    color:#00ff80;
+    color:#ff3333;
     font-family:Consolas,monospace;
     text-align:left;
     padding:18px;
     overflow-y:auto;
     border-radius:18px;
-    border:1px solid #00aaff;
+    border:1px solid #b30000;
     box-shadow:
-    inset 0 0 15px rgba(0,255,120,.15),
-    0 0 25px rgba(0,170,255,.25);
+    inset 0 0 15px rgba(179,0,0,.25),
+    0 0 25px rgba(179,0,0,.35);
 }
 
 #console::-webkit-scrollbar{
@@ -121,7 +120,7 @@ hr{
 }
 
 #console::-webkit-scrollbar-thumb{
-    background:#008cff;
+    background:#800000;
     border-radius:20px;
 }
 
@@ -138,7 +137,7 @@ hr{
 button{
     position:relative;
     overflow:hidden;
-    background:#0078ff;
+    background:#990000;
     color:white;
     border:none;
     border-radius:12px;
@@ -147,15 +146,15 @@ button{
     font-weight:600;
     cursor:pointer;
     box-shadow:
-    0 0 10px #0078ff,
-    0 0 20px rgba(0,120,255,.4);
+    0 0 10px #800000,
+    0 0 20px rgba(153,0,0,.4);
 }
 
 button:hover{
-    background:#0099ff;
+    background:#cc0000;
     box-shadow:
-    0 0 15px #00bfff,
-    0 0 35px rgba(0,180,255,.8);
+    0 0 15px #ff1a1a,
+    0 0 35px rgba(204,0,0,.7);
 }
 
 button:active{
@@ -168,7 +167,7 @@ button:disabled{
     box-shadow:none;
 }
 
-/* Radio */
+/* Radio Buttons */
 
 #kernel-options{
     margin-bottom:20px;
@@ -189,11 +188,11 @@ input[type="radio"]{
 }
 
 input[type="radio"]:checked{
-    background:#00c3ff;
-    border-color:#00c3ff;
+    background:#cc0000;
+    border-color:#cc0000;
     box-shadow:
-    0 0 10px #00c3ff,
-    0 0 20px #00c3ff;
+    0 0 10px #cc0000,
+    0 0 20px #cc0000;
 }
 
 /* Responsive */
