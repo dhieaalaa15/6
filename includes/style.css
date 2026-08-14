@@ -1,5 +1,5 @@
 /* ==========================================================
-   MODERN CLASSIC SOLID THEME (FAST & STATIC)
+   MODERN CLASSIC SOLID THEME (FAST, STATIC & FIXED LAYOUT)
    ========================================================== */
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
@@ -20,7 +20,7 @@ body{
     position:relative;
 }
 
-/* Static Background Grid (No Animations) */
+/* Static Background Grid */
 body::after{
     content:"";
     position:fixed;
@@ -54,18 +54,20 @@ hr{
     background: linear-gradient(90deg, transparent, #00bfff, #ffffff, #00bfff, transparent);
 }
 
-/* Layout */
+/* Layout - Original Side-by-Side Positioning */
 .main-layout{
     display:flex;
     justify-content:center;
-    align-items:flex-start;
+    align-items:stretch; /* إرجاع التنسيق الموازي */
     gap:25px;
-    flex-wrap:wrap;
+    max-width:1200px;
+    margin:0 auto;
 }
 
 /* Media Box */
 .media-box{
     width:320px;
+    flex-shrink:0; /* منع انكماش الصندوق */
     background:rgba(255,255,255,.04);
     border:1px solid rgba(0,180,255,.3);
     border-radius:18px;
@@ -78,15 +80,15 @@ hr{
     border-radius:12px;
 }
 
-/* Console Box - Large & Fast */
+/* Console Box */
 #console{
     flex:1;
-    min-width:650px;
-    height:500px;
+    min-width:300px;
+    height:340px;
     background:#000;
     color:#00ff80;
     font-family:Consolas,monospace;
-    font-size:15px;
+    font-size:14px;
     text-align:left;
     padding:18px;
     overflow-y:auto;
@@ -108,7 +110,7 @@ hr{
     background:#111;
 }
 
-/* Buttons - Fast & Static */
+/* Buttons */
 .btn-container{
     margin:30px 0;
 }
@@ -164,20 +166,14 @@ input[type="radio"]:checked{
     box-shadow: 0 0 8px #00c3ff;
 }
 
-/* Responsive */
-@media(max-width:900px){
+/* Responsive (Mobile Only) */
+@media(max-width:768px){
     .main-layout{
         flex-direction:column;
         align-items:center;
     }
     
-    .media-box{
-        width:100%;
-        max-width:420px;
-    }
-    
-    #console{
-        min-width:100%;
+    .media-box, #console{
         width:100%;
     }
 }
