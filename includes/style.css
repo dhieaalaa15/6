@@ -1,5 +1,5 @@
 /* ==========================================================
-   MODERN CLASSIC SOLID THEME (FAST, STATIC & FIXED LAYOUT)
+   MODERN CLASSIC GLOW THEME (FAST & STATIC)
    ========================================================== */
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
@@ -21,23 +21,28 @@ body{
 }
 
 /* Static Background Grid */
+
 body::after{
     content:"";
     position:fixed;
     inset:0;
     background:
-    linear-gradient(rgba(255,255,255,.02) 1px,transparent 1px),
-    linear-gradient(90deg,rgba(255,255,255,.02) 1px,transparent 1px);
+    linear-gradient(rgba(255,255,255,.015) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,255,255,.015) 1px,transparent 1px);
     background-size:40px 40px;
     z-index:-1;
 }
 
-/* Titles - Static Colors */
+/* Titles - Static Glowing Colors */
+
 h1{
     font-size:40px;
     margin-bottom:8px;
-    color:#00e5ff;
-    text-shadow: 0 0 10px rgba(0,229,255,0.4);
+    color:#fff;
+    text-shadow:
+    0 0 5px #00bfff,
+    0 0 15px #008cff,
+    0 0 30px #0066ff;
 }
 
 h3{
@@ -51,28 +56,40 @@ hr{
     height:2px;
     width:95%;
     margin:25px auto;
-    background: linear-gradient(90deg, transparent, #00bfff, #ffffff, #00bfff, transparent);
+
+    background:
+    linear-gradient(
+    90deg,
+    transparent,
+    #00bfff,
+    #ffffff,
+    #00bfff,
+    transparent);
 }
 
-/* Layout - Original Side-by-Side Positioning */
+/* Layout - Original */
+
 .main-layout{
     display:flex;
     justify-content:center;
-    align-items:stretch; /* إرجاع التنسيق الموازي */
+    align-items:flex-start;
     gap:25px;
-    max-width:1200px;
-    margin:0 auto;
+    flex-wrap:wrap;
 }
 
-/* Media Box */
+/* Media */
+
 .media-box{
     width:320px;
-    flex-shrink:0; /* منع انكماش الصندوق */
     background:rgba(255,255,255,.04);
-    border:1px solid rgba(0,180,255,.3);
+    border:1px solid rgba(0,180,255,.25);
     border-radius:18px;
     padding:15px;
-    box-shadow: 0 0 15px rgba(0,180,255,.2);
+    box-shadow: 0 0 20px rgba(0,180,255,.15);
+}
+
+.media-box:hover{
+    box-shadow: 0 0 35px rgba(0,180,255,.55);
 }
 
 .media-box img{
@@ -80,21 +97,23 @@ hr{
     border-radius:12px;
 }
 
-/* Console Box */
+/* Console - Original Size */
+
 #console{
     flex:1;
-    min-width:300px;
+    min-width:520px;
     height:340px;
     background:#000;
     color:#00ff80;
     font-family:Consolas,monospace;
-    font-size:14px;
     text-align:left;
     padding:18px;
     overflow-y:auto;
     border-radius:18px;
     border:1px solid #00aaff;
-    box-shadow: 0 0 15px rgba(0,170,255,.2);
+    box-shadow:
+    inset 0 0 15px rgba(0,255,120,.15),
+    0 0 25px rgba(0,170,255,.25);
 }
 
 #console::-webkit-scrollbar{
@@ -111,11 +130,14 @@ hr{
 }
 
 /* Buttons */
+
 .btn-container{
     margin:30px 0;
 }
 
 button{
+    position:relative;
+    overflow:hidden;
     background:#0078ff;
     color:white;
     border:none;
@@ -124,15 +146,20 @@ button{
     font-size:18px;
     font-weight:600;
     cursor:pointer;
-    box-shadow: 0 0 12px rgba(0,120,255,.4);
+    box-shadow:
+    0 0 10px #0078ff,
+    0 0 20px rgba(0,120,255,.4);
 }
 
 button:hover{
     background:#0099ff;
+    box-shadow:
+    0 0 15px #00bfff,
+    0 0 35px rgba(0,180,255,.8);
 }
 
 button:active{
-    transform:scale(.98);
+    transform:scale(.97);
 }
 
 button:disabled{
@@ -141,7 +168,8 @@ button:disabled{
     box-shadow:none;
 }
 
-/* Radio Option */
+/* Radio */
+
 #kernel-options{
     margin-bottom:20px;
 }
@@ -163,17 +191,26 @@ input[type="radio"]{
 input[type="radio"]:checked{
     background:#00c3ff;
     border-color:#00c3ff;
-    box-shadow: 0 0 8px #00c3ff;
+    box-shadow:
+    0 0 10px #00c3ff,
+    0 0 20px #00c3ff;
 }
 
-/* Responsive (Mobile Only) */
-@media(max-width:768px){
+/* Responsive */
+
+@media(max-width:900px){
     .main-layout{
         flex-direction:column;
         align-items:center;
     }
-    
-    .media-box, #console{
+
+    .media-box{
+        width:100%;
+        max-width:420px;
+    }
+
+    #console{
+        min-width:100%;
         width:100%;
     }
 }
