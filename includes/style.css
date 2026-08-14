@@ -1,5 +1,5 @@
 /* ==========================================================
-   MODERN CLASSIC GLOW THEME
+   MODERN CLASSIC SOLID THEME (FAST & STATIC)
    ========================================================== */
 
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
@@ -20,52 +20,24 @@ body{
     position:relative;
 }
 
-/* Animated Background */
-
-body::before{
-    content:"";
-    position:fixed;
-    inset:0;
-    background:
-    radial-gradient(circle at 20% 20%,rgba(0,180,255,.18),transparent 30%),
-    radial-gradient(circle at 80% 70%,rgba(0,100,255,.18),transparent 35%),
-    radial-gradient(circle at 50% 50%,rgba(0,255,255,.08),transparent 45%);
-    animation:bgMove 12s ease-in-out infinite alternate;
-    z-index:-2;
-}
-
+/* Static Background Grid (No Animations) */
 body::after{
     content:"";
     position:fixed;
     inset:0;
     background:
-    linear-gradient(rgba(255,255,255,.015) 1px,transparent 1px),
-    linear-gradient(90deg,rgba(255,255,255,.015) 1px,transparent 1px);
+    linear-gradient(rgba(255,255,255,.02) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,255,255,.02) 1px,transparent 1px);
     background-size:40px 40px;
     z-index:-1;
 }
 
-@keyframes bgMove{
-    from{
-        transform:scale(1) rotate(0deg);
-    }
-    to{
-        transform:scale(1.15) rotate(3deg);
-    }
-}
-
-/* Titles */
-
+/* Titles - Static Colors */
 h1{
     font-size:40px;
     margin-bottom:8px;
-    color:#fff;
-    text-shadow:
-    0 0 5px #00bfff,
-    0 0 15px #008cff,
-    0 0 30px #0066ff;
-
-    animation:glow 2.5s infinite alternate;
+    color:#00e5ff;
+    text-shadow: 0 0 10px rgba(0,229,255,0.4);
 }
 
 h3{
@@ -74,372 +46,138 @@ h3{
     margin-bottom:20px;
 }
 
-@keyframes glow{
-
-    from{
-        text-shadow:
-        0 0 5px #00bfff,
-        0 0 15px #008cff;
-    }
-
-    to{
-        text-shadow:
-        0 0 10px #00ffff,
-        0 0 25px #00aaff,
-        0 0 40px #0055ff;
-    }
-
-}
-
 hr{
-
     border:none;
     height:2px;
     width:95%;
     margin:25px auto;
-
-    background:
-    linear-gradient(
-    90deg,
-    transparent,
-    #00bfff,
-    #ffffff,
-    #00bfff,
-    transparent);
-
+    background: linear-gradient(90deg, transparent, #00bfff, #ffffff, #00bfff, transparent);
 }
 
 /* Layout */
-
 .main-layout{
-
     display:flex;
     justify-content:center;
     align-items:flex-start;
     gap:25px;
     flex-wrap:wrap;
-
 }
 
-/* Media */
-
+/* Media Box */
 .media-box{
-
     width:320px;
-
     background:rgba(255,255,255,.04);
-
-    border:1px solid rgba(0,180,255,.25);
-
+    border:1px solid rgba(0,180,255,.3);
     border-radius:18px;
-
     padding:15px;
-
-    box-shadow:
-    0 0 20px rgba(0,180,255,.15);
-
-    transition:.35s;
-
-}
-
-.media-box:hover{
-
-    box-shadow:
-    0 0 35px rgba(0,180,255,.55);
-
-    transform:translateY(-4px);
-
+    box-shadow: 0 0 15px rgba(0,180,255,.2);
 }
 
 .media-box img{
-
     width:100%;
-
     border-radius:12px;
-
-    transition:.4s;
-
 }
 
-.media-box img:hover{
-
-    transform:scale(1.03);
-
-}
-
-/* Console */
-
+/* Console Box - Large & Fast */
 #console{
-
     flex:1;
-
-    min-width:520px;
-
-    height:340px;
-
+    min-width:650px;
+    height:500px;
     background:#000;
-
     color:#00ff80;
-
     font-family:Consolas,monospace;
-
+    font-size:15px;
     text-align:left;
-
     padding:18px;
-
     overflow-y:auto;
-
     border-radius:18px;
-
     border:1px solid #00aaff;
-
-    box-shadow:
-
-    inset 0 0 15px rgba(0,255,120,.15),
-
-    0 0 25px rgba(0,170,255,.25);
-
+    box-shadow: 0 0 15px rgba(0,170,255,.2);
 }
 
 #console::-webkit-scrollbar{
-
     width:10px;
-
 }
 
 #console::-webkit-scrollbar-thumb{
-
     background:#008cff;
-
     border-radius:20px;
-
 }
 
 #console::-webkit-scrollbar-track{
-
     background:#111;
-
 }
 
-/* Buttons */
-
+/* Buttons - Fast & Static */
 .btn-container{
-
     margin:30px 0;
-
 }
 
 button{
-
-    position:relative;
-
-    overflow:hidden;
-
     background:#0078ff;
-
     color:white;
-
     border:none;
-
     border-radius:12px;
-
     padding:14px 42px;
-
     font-size:18px;
-
     font-weight:600;
-
     cursor:pointer;
-
-    transition:.35s;
-
-    box-shadow:
-
-    0 0 10px #0078ff,
-
-    0 0 20px rgba(0,120,255,.4);
-
+    box-shadow: 0 0 12px rgba(0,120,255,.4);
 }
 
 button:hover{
-
     background:#0099ff;
-
-    transform:translateY(-2px);
-
-    box-shadow:
-
-    0 0 15px #00bfff,
-
-    0 0 35px rgba(0,180,255,.8);
-
 }
 
 button:active{
-
-    transform:scale(.97);
-
+    transform:scale(.98);
 }
 
 button:disabled{
-
     opacity:.5;
-
     cursor:not-allowed;
-
     box-shadow:none;
-
 }
 
-/* Shine Animation */
-
-button::before{
-
-    content:"";
-
-    position:absolute;
-
-    top:0;
-
-    left:-120%;
-
-    width:70%;
-
-    height:100%;
-
-    transform:skewX(-25deg);
-
-    background:
-
-    linear-gradient(
-
-    transparent,
-
-    rgba(255,255,255,.65),
-
-    transparent);
-
-}
-
-button:hover::before{
-
-    animation:shine .9s;
-
-}
-
-@keyframes shine{
-
-    100%{
-
-        left:160%;
-
-    }
-
-}
-
-/* Radio */
-
+/* Radio Option */
 #kernel-options{
-
     margin-bottom:20px;
-
 }
 
 label{
-
     margin:0 10px;
-
 }
 
 input[type="radio"]{
-
     appearance:none;
-
     width:18px;
-
     height:18px;
-
     border-radius:50%;
-
     border:2px solid #666;
-
     background:#111;
-
     cursor:pointer;
-
-    transition:.3s;
-
 }
 
 input[type="radio"]:checked{
-
     background:#00c3ff;
-
     border-color:#00c3ff;
-
-    box-shadow:
-
-    0 0 10px #00c3ff,
-
-    0 0 20px #00c3ff;
-
-}
-
-/* Floating Glow */
-
-@keyframes float{
-
-    0%{
-
-        transform:translateY(0px);
-
-    }
-
-    50%{
-
-        transform:translateY(-5px);
-
-    }
-
-    100%{
-
-        transform:translateY(0px);
-
-    }
-
-}
-
-.media-box,
-button{
-
-    animation:float 4s ease-in-out infinite;
-
+    box-shadow: 0 0 8px #00c3ff;
 }
 
 /* Responsive */
-
 @media(max-width:900px){
-
-.main-layout{
-
-flex-direction:column;
-
-align-items:center;
-
-}
-
-.media-box{
-
-width:100%;
-max-width:420px;
-
-}
-
-#console{
-
-min-width:100%;
-width:100%;
-
-}
-
+    .main-layout{
+        flex-direction:column;
+        align-items:center;
+    }
+    
+    .media-box{
+        width:100%;
+        max-width:420px;
+    }
+    
+    #console{
+        min-width:100%;
+        width:100%;
+    }
 }
